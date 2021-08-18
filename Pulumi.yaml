@@ -1,0 +1,3 @@
+name: callout
+runtime: nodejs
+description: Callout Lambda deployment on AWS runtime
