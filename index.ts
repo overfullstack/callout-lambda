@@ -33,7 +33,7 @@ new RolePolicyAttachment("callout-lambda-basic-policy",
 
 const lambdaFunction = new aws.lambda.Function("callout-lambda", {
   code: new pulumi.asset.FileArchive("build/distributions/callout-lambda.zip"),
-  handler: "org.revcloud.Pokemon4kLambda",
+  handler: "org.revcloud.Lambda",
   role: role.arn,
   memorySize: 512,
   timeout: 30,
@@ -62,6 +62,16 @@ const pokemonTable = new aws.dynamodb.Table("Pokemon", {
   ],
   hashKey: "Id",
   rangeKey: "Count",
+  readCapacity: 1,
+  writeCapacity: 1,
+});
+
+const calloutLogTable = new aws.dynamodb.Table("CalloutLog", {
+  name: "CalloutLog",
+  attributes: [
+    {name: "Id", type: "S"},
+  ],
+  hashKey: "Id",
   readCapacity: 1,
   writeCapacity: 1,
 });

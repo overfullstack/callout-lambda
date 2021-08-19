@@ -6,10 +6,8 @@ import org.http4k.core.Method
 import org.http4k.core.Request
 import org.http4k.format.Moshi.auto
 
-class Client(private val pokemonApi: HttpHandler) {
-
+class PokemonClient(private val pokemonApi: HttpHandler) {
   private val body = Body.auto<Results>().toLens()
-
   fun list(): List<Pokemon> {
     val response = pokemonApi(Request(Method.GET, "/api/v2/pokemon?limit=100"))
     return body(response).results

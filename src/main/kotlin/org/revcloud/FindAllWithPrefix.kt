@@ -12,21 +12,20 @@ import org.http4k.format.Moshi.auto
 import org.http4k.lens.Path
 import org.http4k.routing.RoutingHttpHandler
 import org.http4k.routing.bind
-import org.http4k.routing.header
 
 fun findAllWithPrefix(
-  client: Client
-): RoutingHttpHandler = "/{prefix}" bind Method.GET to { req: Request ->
+  pokemonClient: PokemonClient
+): RoutingHttpHandler = "/{prefix}" bind Method.POST to { req: Request ->
   val prefixLens = Path.of("prefix")
   val prefix = prefixLens(req)
-  val results = client.list()
+  val results = pokemonClient.list()
   val pokemonList = results.map { it.name }.filter { it.startsWith(prefix) }
   
-  val (uuid, dbResult) = insert(prefix, pokemonList)
-  val resultLens = Body.auto<LambdaResponse>().toLens()
+  val (uuid, dbResult) = insertPokemon(prefix, pokemonList)
+  val resultLens = Body.auto<PokemonLambdaResponse>().toLens()
   Response(Status.OK)
     .header("uuid", uuid)
-    .with(resultLens of LambdaResponse(pokemonList, dbResult.failureOrNull()))
+    .with(resultLens of PokemonLambdaResponse(pokemonList, dbResult.failureOrNull()))
 }
 
-data class LambdaResponse(val pokemon: List<String>, val failure: RemoteFailure?)
+data class PokemonLambdaResponse(val pokemon: List<String>, val failure: RemoteFailure?)

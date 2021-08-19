@@ -1,0 +1,157 @@
+{
+  "addresses": {},
+  "amountDetails": {
+    "exemptAmount": 0.0,
+    "taxAmount": 46.13,
+    "totalAmount": 450.0,
+    "totalAmountWithTax": 496.13
+  },
+  "currencyIsoCode": "USD",
+  "documentCode": "RESTD121E121809D1R-5124523600040",
+  "effectiveDate": "2021-08-18T00:00:00.000Z",
+  "lineItems": [
+    {
+      "addresses": {},
+      "amountDetails": {
+        "exemptAmount": 0.0,
+        "taxAmount": 25.63,
+        "totalAmount": 250.0,
+        "totalAmountWithTax": 275.63
+      },
+      "effectiveDate": "2021-08-18T00:00:00.000Z",
+      "lineNumber": "1",
+      "productCode": "",
+      "quantity": 1.0,
+      "taxCode": "PA020111",
+      "taxes": [
+        {
+          "imposition": {
+            "type": "General"
+          },
+          "jurisdiction": {
+            "country": "US",
+            "id": "53",
+            "level": "STA",
+            "name": "WASHINGTON",
+            "region": "WA",
+            "stateAssignedNo": ""
+          },
+          "rate": 0.065,
+          "tax": 16.25,
+          "taxId": "8000377543398",
+          "taxableAmount": 250.0
+        },
+        {
+          "imposition": {
+            "type": "General"
+          },
+          "jurisdiction": {
+            "country": "US",
+            "id": "033",
+            "level": "CTY",
+            "name": "KING",
+            "region": "WA",
+            "stateAssignedNo": "1700"
+          },
+          "rate": 0.065,
+          "tax": 0.0,
+          "taxId": "9000377543400",
+          "taxableAmount": 250.0
+        },
+        {
+          "imposition": {
+            "type": "General"
+          },
+          "jurisdiction": {
+            "country": "US",
+            "id": "63000",
+            "level": "CIT",
+            "name": "SEATTLE",
+            "region": "WA",
+            "stateAssignedNo": "1726"
+          },
+          "rate": 0.10250000000000001,
+          "tax": 9.38,
+          "taxId": "10000377543402",
+          "taxableAmount": 250.0
+        }
+      ]
+    },
+    {
+      "addresses": {},
+      "amountDetails": {
+        "exemptAmount": 0.0,
+        "taxAmount": 20.5,
+        "totalAmount": 200.0,
+        "totalAmountWithTax": 220.5
+      },
+      "effectiveDate": "2021-08-18T00:00:00.000Z",
+      "lineNumber": "2",
+      "productCode": "",
+      "quantity": 1.0,
+      "taxCode": "PA020111",
+      "taxes": [
+        {
+          "imposition": {
+            "type": "General"
+          },
+          "jurisdiction": {
+            "country": "US",
+            "id": "53",
+            "level": "STA",
+            "name": "WASHINGTON",
+            "region": "WA",
+            "stateAssignedNo": ""
+          },
+          "rate": 0.065,
+          "tax": 13.0,
+          "taxId": "11000377543400",
+          "taxableAmount": 200.0
+        },
+        {
+          "imposition": {
+            "type": "General"
+          },
+          "jurisdiction": {
+            "country": "US",
+            "id": "033",
+            "level": "CTY",
+            "name": "KING",
+            "region": "WA",
+            "stateAssignedNo": "1700"
+          },
+          "rate": 0.065,
+          "tax": 0.0,
+          "taxId": "12000377543404",
+          "taxableAmount": 200.0
+        },
+        {
+          "imposition": {
+            "type": "General"
+          },
+          "jurisdiction": {
+            "country": "US",
+            "id": "63000",
+            "level": "CIT",
+            "name": "SEATTLE",
+            "region": "WA",
+            "stateAssignedNo": "1726"
+          },
+          "rate": 0.10250000000000001,
+          "tax": 7.5,
+          "taxId": "1000489645428",
+          "taxableAmount": 200.0
+        }
+      ]
+    }
+  ],
+  "referenceDocumentCode": "",
+  "status": "committed",
+  "taxEngineLogs": [
+    {}
+  ],
+  "taxTransactionId": "7109262290",
+  "taxTransactionType": "debit",
+  "taxType": "actual",
+  "transactionDate": "2021-08-18T00:00:00.000Z"
+}

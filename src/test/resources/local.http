@@ -1,4 +1,6 @@
-GET http://localhost:7000/p
+POST http://localhost:7000/callout/real/p
 Accept: application/json
 
 ###
+POST http://localhost:7000/callout/fake
+Accept: application/json

@@ -8,7 +8,7 @@ import org.http4k.server.asServer
 
 fun main() {
   val http = FakePokemonApi()
-  val server = pokemon4k(http).asServer(SunHttp(8000)).start()
+  val server = app(http).asServer(SunHttp(8000)).start()
   val appClient = JavaHttpClient()
   appClient(Request(GET, "http://localhost:8000/b"))
 }

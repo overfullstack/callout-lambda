@@ -24,10 +24,11 @@ private val attrS = Attribute.string().required("Prefix")
 private val attrN = Attribute.int().required("Count")
 private val attrM = Attribute.map().required("Response")
 private val attrL = Attribute.list().required("Pokemon")
+private val attrCalloutS = Attribute.string().required("log")
 
 private val isRunningOnCloud = System.getenv()["AWS_LAMBDA_FUNCTION_NAME"] != null
 
-fun insert(
+fun insertPokemon(
   prefix: String,
   pokemonList: List<String>
 ): Pair<String, Result<ModifiedItem, RemoteFailure>> {
@@ -40,6 +41,21 @@ fun insert(
       attrN of pokemonList.size,
       attrS of prefix,
       attrM of Item().with(attrL of pokemon),
+    )
+  )
+  println(dbResult)
+  return uuid to dbResult
+}
+
+fun persistCalloutResponse(
+  calloutResponse: String
+): Pair<String, Result<ModifiedItem, RemoteFailure>> {
+  val dynamoDbClient = getDynamoDbClient()
+  val uuid = UUID.randomUUID().toString()
+  val dbResult = dynamoDbClient.putItem(
+    TableName.of("CalloutLog"), Item = Item(
+      attrIdS of uuid,
+      attrCalloutS of calloutResponse,
     )
   )
   println(dbResult)
