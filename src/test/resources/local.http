@@ -1,6 +1,8 @@
-POST http://localhost:7000/callout/real/p
+POST http://localhost:7000/callout/pokemon/p
 Accept: application/json
 
 ###
-POST http://localhost:7000/callout/fake
+POST http://localhost:7000/callout/avalara
 Accept: application/json
+
+< ./fake-avalara-response.json

@@ -4,11 +4,12 @@ import org.http4k.core.Request
 import org.http4k.core.Response
 import org.http4k.core.Status
 
-fun FakePokemonApi() = { req: Request ->
+fun fakePokemonApi() = { req: Request ->
   Response(Status(200, ""))
     .header("""access-control-allow-origin""", """*""")
     .header(
-      """alt-svc""", """h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400,
+      """alt-svc""",
+      """h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400,
         h3=":443"; ma=86400"""
     )
     .header("""cache-control""", """public, max-age=86400, s-maxage=86400""")
@@ -20,7 +21,8 @@ fun FakePokemonApi() = { req: Request ->
     .header("""date""", """Thu, 10 Jun 2021 19:31:06 GMT""")
     .header("""etag""", """W/"19ec-8/wsp3EfczGnBIxYH58C7cYqKDI""")
     .header(
-      """expect-ct""", """max-age=604800,
+      """expect-ct""",
+      """max-age=604800,
         report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"""
     )
     .header("""function-execution-id""", """l4ozcwgnpr49""")
@@ -32,7 +34,8 @@ fun FakePokemonApi() = { req: Request ->
     .header("""server""", """cloudflare""")
     .header("""transfer-encoding""", """chunked""")
     .header(
-      """vary""", """Accept-Encoding,cookie,need-authorization, x-fh-requested-host,
+      """vary""",
+      """Accept-Encoding,cookie,need-authorization, x-fh-requested-host,
         accept-encoding"""
     )
     .header("""x-cache""", """HIT""")

@@ -1,4 +1,4 @@
-package org.revcloud
+package org.revcloud.pokemon
 
 import dev.forkhandles.result4k.failureOrNull
 import org.http4k.connect.RemoteFailure
@@ -12,6 +12,7 @@ import org.http4k.format.Moshi.auto
 import org.http4k.lens.Path
 import org.http4k.routing.RoutingHttpHandler
 import org.http4k.routing.bind
+import org.revcloud.insertPokemon
 
 fun findAllWithPrefix(
   pokemonClient: PokemonClient
@@ -20,7 +21,7 @@ fun findAllWithPrefix(
   val prefix = prefixLens(req)
   val results = pokemonClient.list()
   val pokemonList = results.map { it.name }.filter { it.startsWith(prefix) }
-  
+
   val (uuid, dbResult) = insertPokemon(prefix, pokemonList)
   val resultLens = Body.auto<PokemonLambdaResponse>().toLens()
   Response(Status.OK)

@@ -36,7 +36,8 @@ fun insertPokemon(
   val uuid = UUID.randomUUID().toString()
   val pokemon = pokemonList.map { AttributeValue.Str(it) }
   val dbResult = dynamoDbClient.putItem(
-    TableName.of("Pokemon"), Item = Item(
+    TableName.of("Pokemon"),
+    Item = Item(
       attrIdS of uuid,
       attrN of pokemonList.size,
       attrS of prefix,
@@ -53,7 +54,8 @@ fun persistCalloutResponse(
   val dynamoDbClient = getDynamoDbClient()
   val uuid = UUID.randomUUID().toString()
   val dbResult = dynamoDbClient.putItem(
-    TableName.of("CalloutLog"), Item = Item(
+    TableName.of("CalloutLog"),
+    Item = Item(
       attrIdS of uuid,
       attrCalloutS of calloutResponse,
     )

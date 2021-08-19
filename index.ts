@@ -33,7 +33,7 @@ new RolePolicyAttachment("callout-lambda-basic-policy",
 
 const lambdaFunction = new aws.lambda.Function("callout-lambda", {
   code: new pulumi.asset.FileArchive("build/distributions/callout-lambda.zip"),
-  handler: "org.revcloud.Lambda",
+  handler: "org.revcloud.CalloutLambda",
   role: role.arn,
   memorySize: 512,
   timeout: 30,

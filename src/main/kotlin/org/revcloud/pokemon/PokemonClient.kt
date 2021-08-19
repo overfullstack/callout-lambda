@@ -1,4 +1,4 @@
-package org.revcloud
+package org.revcloud.pokemon
 
 import org.http4k.core.Body
 import org.http4k.core.HttpHandler
