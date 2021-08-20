@@ -31,13 +31,40 @@ new RolePolicyAttachment("callout-lambda-basic-policy",
     policyArn: aws.iam.ManagedPolicies.AWSLambdaBasicExecutionRole
   });
 
+
+const pokemonTable = new aws.dynamodb.Table("Pokemon", {
+  attributes: [
+    {name: "Id", type: "S"},
+    {name: "Count", type: "N"},
+  ],
+  hashKey: "Id",
+  rangeKey: "Count",
+  readCapacity: 1,
+  writeCapacity: 1,
+});
+
+const avalaraTable = new aws.dynamodb.Table("Avalara", {
+  attributes: [
+    {name: "Id", type: "S"},
+  ],
+  hashKey: "Id",
+  readCapacity: 1,
+  writeCapacity: 1,
+});
+
 const lambdaFunction = new aws.lambda.Function("callout-lambda", {
   code: new pulumi.asset.FileArchive("build/distributions/callout-lambda.zip"),
   handler: "org.revcloud.CalloutLambda",
   role: role.arn,
   memorySize: 512,
   timeout: 30,
-  runtime: "java11"
+  runtime: "java11",
+  environment: {
+    variables: {
+      "POKEMON_TABLE": pokemonTable.name,
+      "AVALARA_TABLE": avalaraTable.name,
+    },
+  },
 });
 
 const logGroupApi = new aws.cloudwatch.LogGroup("callout-api-route", {
@@ -52,28 +79,6 @@ const apiGatewayPermission = new aws.lambda.Permission("callout-gateway-permissi
 
 const api = new aws.apigatewayv2.Api("callout-api", {
   protocolType: "HTTP"
-});
-
-const pokemonTable = new aws.dynamodb.Table("Pokemon", {
-  name: "Pokemon",
-  attributes: [
-    {name: "Id", type: "S"},
-    {name: "Count", type: "N"},
-  ],
-  hashKey: "Id",
-  rangeKey: "Count",
-  readCapacity: 1,
-  writeCapacity: 1,
-});
-
-const calloutLogTable = new aws.dynamodb.Table("CalloutLog", {
-  name: "CalloutLog",
-  attributes: [
-    {name: "Id", type: "S"},
-  ],
-  hashKey: "Id",
-  readCapacity: 1,
-  writeCapacity: 1,
 });
 
 const apiDefaultStage = new aws.apigatewayv2.Stage("default", {
