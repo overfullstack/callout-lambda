@@ -11,11 +11,11 @@ repositories {
   mavenCentral()
 }
 
-java.sourceCompatibility = JavaVersion.VERSION_11
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 tasks {
-  compileKotlin.get().kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
-  compileTestKotlin.get().kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
+  compileKotlin.get().kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
+  compileTestKotlin.get().kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
   test.get().useJUnitPlatform()
 
   register<Zip>("buildZip") {
