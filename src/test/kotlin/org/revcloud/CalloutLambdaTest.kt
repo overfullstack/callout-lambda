@@ -10,17 +10,15 @@ import org.junit.jupiter.api.Test
 class CalloutLambdaTest {
   @Test
   fun pokemon() {
-    val http = fakePokemonApi()
-    app(pokeCoApi = http).asServer(SunHttp(7001)).start()
+    app(pokeCoApi = fakePokemonApi()).asServer(SunHttp(7001)).start()
     val appClient = JavaHttpClient()
     appClient(Request(GET, "http://localhost:7001/callout/pokemon"))
   }
 
   @Test
   fun avalara() {
-    val http = fakeAvalaraApi()
-    app(avalaraApi = http).asServer(SunHttp(7001)).start()
+    app(avalaraApi = fakeAvalaraApi()).asServer(SunHttp(8001)).start()
     val appClient = JavaHttpClient()
-    appClient(Request(GET, "http://localhost:7001/callout/avalara"))
+    appClient(Request(GET, "http://localhost:8001/callout/avalara"))
   }
 }

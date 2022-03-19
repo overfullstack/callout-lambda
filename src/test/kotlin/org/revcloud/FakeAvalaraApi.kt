@@ -5,7 +5,7 @@ import org.http4k.core.Response
 import org.http4k.core.Status
 import java.io.File
 
-fun fakeAvalaraApi() = { req: Request ->
+fun fakeAvalaraApi(): (Request) -> Response = { _: Request ->
   val fakeResponse = readFileFromTestResource("fake-avalara-response.json")
   Response(Status(200, ""))
     .body(fakeResponse)

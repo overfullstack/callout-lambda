@@ -4,7 +4,7 @@ import org.http4k.core.Request
 import org.http4k.core.Response
 import org.http4k.core.Status
 
-fun fakePokemonApi() = { req: Request ->
+fun fakePokemonApi(): (Request) -> Response = { _: Request ->
   Response(Status(200, ""))
     .header("""access-control-allow-origin""", """*""")
     .header(

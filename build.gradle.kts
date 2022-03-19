@@ -32,8 +32,9 @@ dependencies {
   implementation("org.http4k:http4k-core:$http4kVersion")
   implementation("org.http4k:http4k-serverless-lambda:$http4kVersion")
   implementation("org.http4k:http4k-format-moshi:$http4kVersion")
-  implementation("org.http4k:http4k-connect-amazon-dynamodb:3.6.3.1")
+  implementation("org.http4k:http4k-connect-amazon-dynamodb:3.16.4.0")
   testImplementation("org.http4k:http4k-testing-hamkrest:$http4kVersion")
+  testImplementation(kotlin("test"))
   val junitVersion: String by project
   testImplementation(platform("org.junit:junit-bom:$junitVersion"))
   testImplementation("org.junit.jupiter:junit-jupiter-api")
