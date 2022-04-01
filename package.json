@@ -2,7 +2,7 @@
   "name": "callout-lambda",
   "devDependencies": {
     "@jen20/pulumi-aws-vpc": "^2.2.1",
-    "@types/node": "^16.6.2"
+    "@types/node": "16.11.26"
   },
   "dependencies": {
     "@pulumi/aws": "^4.16.0",
