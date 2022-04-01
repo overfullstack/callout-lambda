@@ -101,10 +101,10 @@
     read-package-tree "^5.2.1"
     resolve "^1.7.1"
 
-"@pulumi/awsx@^0.31.0":
-  version "0.31.0"
-  resolved "https://registry.yarnpkg.com/@pulumi/awsx/-/awsx-0.31.0.tgz#f77368ccbdd76d21782d715f5a88029e5c65c57f"
-  integrity sha512-Z8WDMO0rpwPIACy0oD3m80DdHE+0/wFtBy5YdPiieMr4CekohOfc83BTix3U5dDfv6XCtEsMI+VzZvgYUM1e4w==
+"@pulumi/awsx@0.40.0":
+  version "0.40.0"
+  resolved "https://registry.yarnpkg.com/@pulumi/awsx/-/awsx-0.40.0.tgz#14da49be027f9208dfc266e5a1d0c65aae74e0e2"
+  integrity sha512-4xMmVOHT/PZQsqPAPWe1cYguUCdk0ZUJ1JN7wfYUoGy1I3LR7gxPD14IK5I79o20PmZI65BRlAwNuntByVy6xw==
   dependencies:
     "@pulumi/docker" "^3.0.0"
     "@types/aws-lambda" "^8.10.23"
