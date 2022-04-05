@@ -17,12 +17,12 @@ import org.revcloud.pokemon.pokemonApi
 class CalloutLambda : ApiGatewayV1LambdaFunction(app())
 
 fun app(
-  pokeCoApi: HttpHandler = pokemonApi(),
+  pokemonApi: HttpHandler = pokemonApi(),
   avalaraApi: HttpHandler = avalaraApi()
 ): HttpHandler {
   return debug().then(
     "/callout" bind routes(
-      "/pokemon" bind findAllWithPrefix(PokemonClient(pokeCoApi)),
+      "/pokemon" bind findAllWithPrefix(PokemonClient(pokemonApi)),
       "/avalara" bind persistCalloutResponse(AvalaraClient(avalaraApi))
     )
   )

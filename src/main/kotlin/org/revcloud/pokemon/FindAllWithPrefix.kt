@@ -26,7 +26,7 @@ import java.util.UUID
 
 fun findAllWithPrefix(
   pokemonClient: PokemonClient
-): RoutingHttpHandler = "/{prefix}" bind Method.POST to { req: Request ->
+): RoutingHttpHandler = "/{prefix}" bind Method.GET to { req: Request ->
   val prefixLens = Path.of("prefix")
   val prefix = prefixLens(req)
   val results = pokemonClient.list()

@@ -1,10 +1,27 @@
 package org.revcloud
 
+import org.http4k.client.JavaHttpClient
+import org.http4k.core.HttpHandler
+import org.http4k.core.Method
 import org.http4k.core.Request
 import org.http4k.core.Response
 import org.http4k.core.Status
+import org.http4k.server.SunHttp
+import org.http4k.server.asServer
+import org.junit.jupiter.api.Test
 
-fun fakePokemonApi(): (Request) -> Response = { _: Request ->
+private const val port = 9001
+
+class PokemonApiTest {
+  @Test
+  fun pokemon() {
+    app(pokemonApi = fakePokemonApi()).asServer(SunHttp(9001)).start()
+    val appClient = JavaHttpClient()
+    appClient(Request(Method.GET, "http://localhost:$port/callout/pokemon/p"))
+  }
+}
+
+fun fakePokemonApi(): HttpHandler = { _: Request ->
   Response(Status(200, ""))
     .header("""access-control-allow-origin""", """*""")
     .header(
