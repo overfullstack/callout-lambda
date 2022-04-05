@@ -2,11 +2,11 @@
   "name": "callout-lambda",
   "devDependencies": {
     "@jen20/pulumi-aws-vpc": "2.2.1",
-    "@types/node": "16.6.2"
+    "@types/node": "16.11.26"
   },
   "dependencies": {
-    "@pulumi/aws": "4.16.0",
-    "@pulumi/awsx": "0.31.0",
-    "@pulumi/pulumi": "3.10.2"
+    "@pulumi/aws": "4.38.1",
+    "@pulumi/awsx": "0.40.0",
+    "@pulumi/pulumi": "3.28.0"
   }
 }
