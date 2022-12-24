@@ -32,7 +32,7 @@ dependencies {
   implementation("org.http4k:http4k-core:$http4kVersion")
   implementation("org.http4k:http4k-serverless-lambda:$http4kVersion")
   implementation("org.http4k:http4k-format-moshi:$http4kVersion")
-  implementation("org.http4k:http4k-connect-amazon-dynamodb:3.17.2.0")
+  implementation("org.http4k:http4k-connect-amazon-dynamodb:3.25.5.0")
   testImplementation("org.http4k:http4k-testing-hamkrest:$http4kVersion")
   testImplementation(kotlin("test"))
   val junitVersion: String by project
