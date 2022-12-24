@@ -190,7 +190,7 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@pulumi/aws@5.25.0":
+"@pulumi/aws@5.25.0", "@pulumi/aws@^5.16.2":
   version "5.25.0"
   resolved "https://registry.yarnpkg.com/@pulumi/aws/-/aws-5.25.0.tgz#8637deafb09e0b3accb2f01660b71ba49594d099"
   integrity sha512-I219gKTWjUAEBVcGG8v2OTYTV3kKFIZmVTh6huX4Px4zQ9Nipujj98lXw9eQWJ1wEqpYJXasyz18/bufn2Y5Iw==
@@ -214,19 +214,21 @@
     read-package-tree "^5.2.1"
     resolve "^1.7.1"
 
-"@pulumi/awsx@0.40.1":
-  version "0.40.1"
-  resolved "https://registry.yarnpkg.com/@pulumi/awsx/-/awsx-0.40.1.tgz#999920bdf360ed6d9f6f809ef0c15fcbf6f4cf33"
-  integrity sha512-ws5pIxq4tghP6keXBHaSMhuEY0mcxD7kO31rJDjgRL10bqnRGTtblXssULEYMM0dQWTfxXhSeXGwWKSTkalLIw==
+"@pulumi/awsx@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@pulumi/awsx/-/awsx-1.0.1.tgz#c9fe5cf885c5cec604b1e15d3f6bcd2ac0344672"
+  integrity sha512-vByyrOikkMLDGgRWXLrplOOcyWNjkMgjETONmWkvJeAUxP8OriwGds5VgTAf7OMf8AAdajC5I+Dvzgp8Ibp4Mg==
   dependencies:
-    "@pulumi/docker" "^3.0.0"
-    "@types/aws-lambda" "8.10.93"
+    "@pulumi/aws" "^5.16.2"
+    "@pulumi/docker" "^3.6.1"
+    "@pulumi/pulumi" "^3.0.0"
+    "@types/aws-lambda" "^8.10.23"
     mime "^2.0.0"
 
-"@pulumi/docker@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@pulumi/docker/-/docker-3.0.0.tgz#ff12cf52a24a3fc2661006567fffc3556d015b5b"
-  integrity sha512-AzPhb/ibuHBy+GGDHrY3rPJeaO5DIMqv/ABtenQdoAw8X00E3UTV+D9dDS/GRq0oJ2aDvZupIlSdrPD7eJ5jgA==
+"@pulumi/docker@^3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@pulumi/docker/-/docker-3.6.1.tgz#a216c9bd2bbd35dd7091db2827a3a434adff021c"
+  integrity sha512-BZME50QkT556v+LvmTXPT8ssB2xxNkp9+msB5xYFEnUnWcdGAx5yUysQw70RJCb+U0GbkJSbxtlgMJgOQf/now==
   dependencies:
     "@pulumi/pulumi" "^3.0.0"
     semver "^5.4.0"
@@ -308,20 +310,20 @@
   resolved "https://registry.yarnpkg.com/@pulumi/query/-/query-0.3.0.tgz#f496608e86a18c3dd31b6c533408e2441c29071d"
   integrity sha512-xfo+yLRM2zVjVEA4p23IjQWzyWl1ZhWOGobsBqRpIarzLvwNH/RAGaoehdxlhx4X92302DrpdIFgTICMN4P38w==
 
-"@types/aws-lambda@8.10.93":
-  version "8.10.93"
-  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.93.tgz#3e2c80894122477040aabf29b7320556f5702a76"
-  integrity sha512-Vsyi9ogDAY3REZDjYnXMRJJa62SDvxHXxJI5nGDQdZW058dDE+av/anynN2rLKbCKXDRNw3D/sQmqxVflZFi4A==
+"@types/aws-lambda@^8.10.23":
+  version "8.10.109"
+  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.109.tgz#2f434cbfafe083529e365fe9c114787827a169a8"
+  integrity sha512-/ME92FneNyXQzrAfcnQQlW1XkCZGPDlpi2ao1MJwecN+6SbeonKeggU8eybv1DfKli90FAVT1MlIZVXfwVuCyg==
 
 "@types/long@^4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.1.tgz#459c65fa1867dafe6a8f322c4c51695663cc55e9"
   integrity sha512-5tXH6Bx/kNGd3MgffdmP4dy2Z+G4eaXw0SE81Tq3BNadtnMR5/ySMzX4SLEzHJzSmPNn4HIdpQsBvXMUykr58w==
 
-"@types/node@16.18.10":
-  version "16.18.10"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.10.tgz#d7415ef18c94f8d4e4a82ebcc8b8999f965d8920"
-  integrity sha512-XU1+v7h81p7145ddPfjv7jtWvkSilpcnON3mQ+bDi9Yuf7OI56efOglXRyXWgQ57xH3fEQgh7WOJMncRHVew5w==
+"@types/node@18.11.17":
+  version "18.11.17"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.17.tgz#5c009e1d9c38f4a2a9d45c0b0c493fe6cdb4bcb5"
+  integrity sha512-HJSUJmni4BeDHhfzn6nF0sVmd1SMezP7/4F0Lq+aXzmp2xm9O7WXrUtHW/CHlYVtZUbByEvWidHqRtcJXGF2Ng==
 
 "@types/node@>=12.12.47", "@types/node@>=13.7.0":
   version "16.6.1"
